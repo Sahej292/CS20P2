@@ -24,7 +24,7 @@ public class SpendingApplication
 	System.out.println("Rent:  ");
 	int rent = input.nextInt();
 	// After getting the amounts, add to get the total 
-	int  total = food + clothing + entertainment + rent; 
+	double  total = food + clothing + entertainment + rent; 
 	
 	double foodPercent = (food / total) * 100;
 	double clothingPercent = (clothing / total) * 100;
