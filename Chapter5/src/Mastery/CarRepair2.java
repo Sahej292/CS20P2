@@ -8,27 +8,25 @@ public class CarRepair2 {
 		// TODO Auto-generated method stub
 		 // Create a Scanner object to get input from the user
         Scanner input = new Scanner(System.in);  
-        int carmodel;
-        
+       
         // Ask the user to enter their car model
         System.out.print("Enter your car model (Enter 0 to quit):  ");
         
-        while (true) {
-        int carmodel1 = input.nextInt();
-        }
-        if (carmodel == 0) {
-        	System.out.print("Enter car model: "); 
-        }
+        int carmodel = input.nextInt();
         
-        // Check if the car model is one of the defective models
-        if (carmodel == 119 || carmodel == 179 || carmodel == 189 
-            || carmodel == 195 || carmodel == 221 || carmodel == 780) {
-            // If the car model matches any defective model, print this message
-            System.out.print("Your car is defective! It must be repaired.");
-        } else {
-            // If the car model does not match any defective model, print this message
-            System.out.print("Your car is not defective");
-        }
+        if (carmodel == 0) {
+             
+          }
+        else if (carmodel == 119 || carmodel == 179 || carmodel == 189 || carmodel == 195 || carmodel == 221 || carmodel == 780) {
+                // If the car model matches any defective model, print this message
+                System.out.print("Your car is defective! It must be repaired.");
+            } else {
+                // If the car model does not match any defective model, print this message
+                System.out.print("Your car is not defective");
+            }
+
+        
+       
 	}
 
 }
