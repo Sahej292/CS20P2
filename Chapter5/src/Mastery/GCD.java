@@ -26,3 +26,8 @@ public class GCD {
 	}
 
 }
+
+
+
+
+S
