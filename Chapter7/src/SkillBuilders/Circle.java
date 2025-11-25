@@ -28,6 +28,27 @@ public double circumference()
 	
 	return circumference(); 
 }
+public static void displayFormula()
+{
+	System.out.print("The formula for the area of a " 
+						+ "circle is A = PI * r* r");
+}
+
+public boolean equals(Object obj)
+{
+	Circle testObj = (Circle)obj; 
+	//object to be compared		//our radius
+	if(testObj.getRadius()== radius)
+	{
+		return(true);
+		
+	}
+	
+	else {
+		return (false);
+	}
+}
+
 
 
 public String toString() // always includes the blue variables in your class
