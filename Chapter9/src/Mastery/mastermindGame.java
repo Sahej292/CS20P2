@@ -11,7 +11,7 @@ public class mastermindGame {
 		this.numColors= numColors;
 		this.numPegs= numPegs;
 		secretcode = new int [numPegs];
-		
+		// randomizer
 		Random rand = new Random();
 		for (int i = 0; i < numPegs; i++) {
 			secretcode[i] = rand.nextInt(numColors) +1;	
@@ -20,30 +20,32 @@ public class mastermindGame {
 		}
 	}
 public int[] checkGuess(int[] guess) {
-	int exact = 0;
-	int colorOnly = 0; 
+	int colorsAndpegs = 0; //the correct code-> correct color and position
+	int colors = 0; // the colors regardless of position 
 	
-	int[] secretCount = new int[numColors + 1];
-    int[] guessCount = new int[numColors + 1];
+	//creating array's --> index starts at 1
+	
+	int[] secretCount = new int[numColors + 1]; //how many times each color in the code
+    int[] guessCount = new int[numColors + 1]; // how many times each color appears in the guess
 	
     for (int i = 0; i < numPegs; i++) {
-        // code is cracked
-    	if (guess[i] == secretcode[i]) {
-            exact++;
+        // check if guessed color matches the secret code
+    	if (guess[i] == secretcode[i]) { //if code is correct
+            colorsAndpegs++;
         } else {
             // wrong code --- adding of guess
-        	secretCount[secretcode[i]]++;
+        	secretCount[secretcode[i]]++; // if code is not correct
             guessCount[guess[i]]++;
         }
     }
-    for (int c = 1; c <= numColors; c++) {
+    for (int c = 1; c <= numColors; c++) {  
         if (secretCount[c] < guessCount[c]) {
-            colorOnly += secretCount[c];
+            colors += secretCount[c];
         } else {
-            colorOnly += guessCount[c];
+            colors += guessCount[c]; 
         }
     }
-	return new int[] {exact, colorOnly};
+	return new int[] {colorsAndpegs, colors};
 
 }
 

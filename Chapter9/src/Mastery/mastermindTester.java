@@ -35,7 +35,7 @@ public class mastermindTester {
 	            // Display results
 	            System.out.println(
 	                "You have " + result[0] + " peg(s) correct and " +
-	                result[0] + " color(s) correct."
+	                (result[1] + result[0]) + " color(s) correct."
 	            );
 
 	            // Check win condition
