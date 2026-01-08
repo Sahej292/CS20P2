@@ -9,7 +9,7 @@ public class BlinkLED {
 		 DigitalOutput redLED = new DigitalOutput();
 
 	        //Address 
-	        greenLED.setHubPort(5);
+	        greenLED.setHubPort(4);
 	        greenLED.setIsHubPortDevice(true);
 	        redLED.setHubPort(1);
 	        redLED.setIsHubPortDevice(true);

@@ -13,22 +13,35 @@ public class ReadButton {
         //Address | This tells your program where to find the device you want to work with. Your button is connected to port 0 and your code reflects that. IsHubPortDevice must be set if you are not using a Smart Phidget (more on this later).
         redButton.setHubPort(0);
         redButton.setIsHubPortDevice(true);
-        greenButton.setHubPort(4);
+       
+        greenButton.setHubPort(5);
         greenButton.setIsHubPortDevice(true);
 
         //Open | Open establishes a connection between your object and your physical Phidget. You provide a timeout value of 1000 to give the program 1000 milliseconds (1 second) to locate your Phidget. If your Phidget can't be found, an exception will be thrown.
         redButton.open(1000);
         greenButton.open(1000);
 
-      
+        boolean lastRedState = redButton.getState();
+        boolean lastGreenState = greenButton.getState();
+
         	
-        }
-        //Use your Phidgets | Here is where you use your Phidgets! This code checks the state of the button and prints true/false when the button is pressed/released. The sleep function means the button state is only checked every 150 milliseconds. Sleeping is used to make it easier to read the console output and to put less stress on your CPU.
-        while(){
-            System.out.println("Red Button State: " + redButton.getState());
-            Thread.sleep(300);
-            System.out.println("Green Button State: " + greenButton.getState());
-            Thread.sleep(300);
+        
+       
+	while (true) {
+                boolean currentRedState = redButton.getState();
+                boolean currentGreenState = greenButton.getState();
+
+                // Only print when the RED button state changes
+                if (currentRedState != lastRedState) {
+                    System.out.println("Red Button State: " + currentRedState);
+                    lastRedState = currentRedState;
+                }
+
+                // Only print when the GREEN button state changes
+                if (currentGreenState != lastGreenState) {
+                    System.out.println("Green Button State: " + currentGreenState);
+                    lastGreenState = currentGreenState;
+                }
 
         }
     }
