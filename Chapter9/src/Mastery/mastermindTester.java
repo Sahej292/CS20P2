@@ -1,5 +1,5 @@
 package Mastery;
-
+import com.phidget22.*;
 import java.util.Scanner;
 
 public class mastermindTester {
