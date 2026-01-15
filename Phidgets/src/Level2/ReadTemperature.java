@@ -21,9 +21,9 @@ public class ReadTemperature {
             Ftemp = Math.round(Ftemp * 100.0) / 100.0;
         	
         	System.out.println("Temperature: " + Ftemp + " °F" );
-            Thread.sleep(300);
+            Thread.sleep(500);
             System.out.println("Temperature: " + Ctemp + " °C" );
-            Thread.sleep(300);
+            Thread.sleep(500);
         }
     }
 	

@@ -24,15 +24,14 @@ public class AttachAndDetachEvents {
         //Data Event 
         temperatureSensor.addTemperatureChangeListener(new TemperatureSensorTemperatureChangeListener() {
             public void onTemperatureChange(TemperatureSensorTemperatureChangeEvent e) {
-                //Print temperature
-                System.out.println("Temperature: " + e.getTemperature() + "°C");
+                
             }
         });
 
         //Attach Event 
         temperatureSensor.addAttachListener(new AttachListener() {
             public void onAttach(AttachEvent e) {
-                System.out.println("Attach!");
+                System.out.println("Attach Temperature Sensor");
             }
         });
         
@@ -65,7 +64,7 @@ public class AttachAndDetachEvents {
         //Detach Event 
         temperatureSensor.addDetachListener(new DetachListener() {
             public void onDetach(DetachEvent e) {
-                System.out.println("Detach!");
+                System.out.println("Detach Temperature Sensor");
             }
         });
         redButton.addDetachListener(new DetachListener() {
